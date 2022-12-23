@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UFT-8">
+<title>Hammerjs</title>
+<style type="text/css">
+#block{
+	width: 300px;
+    height: 200px;
+    margin-top: calc(50vh - 200px);
+    margin-left: calc(50vw - 200px);
+    background-color: #f18973;
+    border-radius: 7px;
+    }
+</style>
+</head>
+
+<body>
+<div id="block">Arraste: esquerda ou direita</div>
+	
+	<script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<script type="text/javascript">
+
+	var element = document.getElementById('block');
+	Hammer(element).on('swipeleft', function (event) {
+ 	
+  $('#block').animate({'margin-left': '-310px'}, 1000);
+  console.log("arrastado para esquerda");
+});
+
+	var element = document.getElementById('block');
+	Hammer(element).on('swiperight', function (event) {
+  // animate blok
+  $('#block').animate({'margin-left': '100vw'}, 1000);
+    console.log("Arrastado para direita");
+
+});
+	var element = document.getElementById('block');
+	Hammer(element).on('tap', function(ev){
+	console.log('toque');
+});
+
+
+	var element = document.getElementById('block');
+	Hammer(element).on('doubletap', function(ev){
+	console.log('dois toques');
+});
+    
+</script>
+</body>
+</html>
+
+
+
